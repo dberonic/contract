@@ -21,7 +21,7 @@ contract Main {
         address userAddress;
         bool confirmed;
 
-        string[] postedPapers;
+        Paper[] postedPapers;
         Review[] writtenReviews;
     }
     
@@ -48,7 +48,10 @@ contract Main {
     // Read/write Users
     mapping(address => User) public users;
     mapping(uint => Paper) public papers;
- 
+    
+    // Arrays
+    User[] usersArray;
+    Paper[] papersArray;
 
     constructor () public {
         // the suthors address will be hinden and you will onely be able to see the hash
@@ -59,6 +62,16 @@ contract Main {
 
         addReview("0xE0B6e5538CE13841B19A022cA671a1177a3B7d83", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
     }
+
+    // returning all papers
+    function getUsers()  public view returns(User[] memory){
+        return usersArray;
+    }
+
+     function getPapers()  public view returns(Paper[] memory){
+        return papersArray;
+    }
+
     
     function getHello() public view returns(string memory){
         return "Hello from the other side"; 
@@ -87,6 +100,8 @@ contract Main {
        users[_address].balance = 100;
        users[_address].userAddress = _address;
        users[_address].confirmed = false;
+
+       usersArray.push(users[_address]);
 
     }
 
@@ -121,6 +136,11 @@ contract Main {
         papers[_paperID].category = _category;
         papers[_paperID].paperAbstract = _paperAbstract;
         papers[_paperID].minuteRead = _minuteRead;
+
+        papersArray.push(papers[_paperID]);
+        // add paper to the author
+      //  User memory user = users(_authorAddress);
+      users[_authorAddress].postedPapers.push(papers[_paperID]);
     }
 
     function addReview(string memory _authorAddress, uint _paperID, string memory _reviewContent) public {
@@ -129,6 +149,10 @@ contract Main {
         Review memory newReview = Review(_authorAddress, _paperID, _reviewContent, papers[_paperID].paperReviews.length + 1);
         papers[_paperID].paperReviews.push(newReview);
 
+    }
+
+    function getAuthoredPapers(address _authorAddress) public returns(Paper [] memory){
+        return users[_authorAddress].postedPapers;
     }
 
 
