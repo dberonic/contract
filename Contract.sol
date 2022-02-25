@@ -9,14 +9,17 @@ pragma abicoder v2;
 contract Main {
 
     struct User {
-        string userEmail;
+        string email;
         string firstName;
         string lastName;
         // Metamask could handle the wallet balance
         string passwordHash;
         // passwords will be hashed appon entry and compared to stored hashes
 
-        string biografy;
+        string biography;
+        string degree;
+        string profession; 
+
         uint balance;
         address userAddress;
         bool confirmed;
@@ -41,7 +44,7 @@ contract Main {
         string authorHash;
         uint paperReviwed;
 
-        string reviewContent;
+        string content;
         uint reviewId;
     }
 
@@ -79,7 +82,7 @@ contract Main {
 
     function register (string memory _userEmial, string memory _fname, string memory _lname, string memory _biografy, string memory _passwordHash, address _address) public returns(User memory) {
          // check if the user exists 
-         bytes memory tempEmptyStringTest = bytes(users[_address].userEmail); 
+         bytes memory tempEmptyStringTest = bytes(users[_address].email); 
         if(tempEmptyStringTest.length != 0){ // checks if the user with this adress exists
            revert('The user with this address already exists');
         } 
@@ -89,14 +92,14 @@ contract Main {
         return users[_address];
     }
 
-    function addUser (string memory _userEmial, string memory _fname, string memory _lname, string memory _biografy, string memory _passwordHash, address _address) private {
+    function addUser (string memory _userEmial, string memory _fname, string memory _lname, string memory _biography, string memory _passwordHash, address _address) private {
        // , new Paper[](0) - this does not work
          // users[_address] = User( _userEmial, _fname, _lname, _passwordHash,_biografy, 100, _address, false);
-       users[_address].userEmail = _userEmial;
+       users[_address].email = _userEmial;
        users[_address].firstName = _fname;
        users[_address].lastName = _lname;
        users[_address].passwordHash = _passwordHash;
-       users[_address].biografy = _biografy;
+       users[_address].biography = _biography;
        users[_address].balance = 100;
        users[_address].userAddress = _address;
        users[_address].confirmed = false;
@@ -107,13 +110,13 @@ contract Main {
 
     function login(string memory _userEmial, string memory _passwordHash,  address _address) public view returns(User memory){
         
-        bytes memory tempEmptyStringTest = bytes(users[_address].userEmail); 
+        bytes memory tempEmptyStringTest = bytes(users[_address].email); 
         if(tempEmptyStringTest.length == 0){ // checks if the user with this adress exists
            revert('The user with this address does not exist');
         }
 
         User memory user = users[_address]; // checks if the user with this email exists
-        if(keccak256(abi.encodePacked((user.userEmail))) !=  keccak256(abi.encodePacked((_userEmial)))) {
+        if(keccak256(abi.encodePacked((user.email))) !=  keccak256(abi.encodePacked((_userEmial)))) {
             revert('Incorenct username or password');
         }
         // checks if the user with this password exists
@@ -125,7 +128,7 @@ contract Main {
 
     function addPaper (uint _paperID, string memory _authorHash, string memory _title, string memory _category, string memory _paperAbstract, uint _minuteRead, address  _authorAddress) public {
 
-        bytes memory tempEmptyStringTest = bytes(users[_authorAddress].userEmail); 
+        bytes memory tempEmptyStringTest = bytes(users[_authorAddress].email); 
         if(tempEmptyStringTest.length == 0){ // checks if the user with this adress exists
            revert('The user with this address does not exist');
         }
@@ -151,7 +154,7 @@ contract Main {
 
     }
 
-    function getAuthoredPapers(address _authorAddress) public returns(Paper [] memory){
+    function getAuthoredPapers(address _authorAddress) public view returns(Paper [] memory){
         return users[_authorAddress].postedPapers;
     }
 

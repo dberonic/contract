@@ -132,7 +132,7 @@
 									},
 									{
 										"internalType": "string",
-										"name": "reviewContent",
+										"name": "content",
 										"type": "string"
 									},
 									{
@@ -151,7 +151,7 @@
 						"type": "tuple[]"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -217,7 +217,7 @@
 									},
 									{
 										"internalType": "string",
-										"name": "reviewContent",
+										"name": "content",
 										"type": "string"
 									},
 									{
@@ -247,7 +247,7 @@
 						"components": [
 							{
 								"internalType": "string",
-								"name": "userEmail",
+								"name": "email",
 								"type": "string"
 							},
 							{
@@ -267,7 +267,17 @@
 							},
 							{
 								"internalType": "string",
-								"name": "biografy",
+								"name": "biography",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "degree",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "profession",
 								"type": "string"
 							},
 							{
@@ -331,7 +341,7 @@
 											},
 											{
 												"internalType": "string",
-												"name": "reviewContent",
+												"name": "content",
 												"type": "string"
 											},
 											{
@@ -363,7 +373,7 @@
 									},
 									{
 										"internalType": "string",
-										"name": "reviewContent",
+										"name": "content",
 										"type": "string"
 									},
 									{
@@ -409,7 +419,7 @@
 						"components": [
 							{
 								"internalType": "string",
-								"name": "userEmail",
+								"name": "email",
 								"type": "string"
 							},
 							{
@@ -429,7 +439,17 @@
 							},
 							{
 								"internalType": "string",
-								"name": "biografy",
+								"name": "biography",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "degree",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "profession",
 								"type": "string"
 							},
 							{
@@ -493,7 +513,7 @@
 											},
 											{
 												"internalType": "string",
-												"name": "reviewContent",
+												"name": "content",
 												"type": "string"
 											},
 											{
@@ -525,7 +545,7 @@
 									},
 									{
 										"internalType": "string",
-										"name": "reviewContent",
+										"name": "content",
 										"type": "string"
 									},
 									{
@@ -630,7 +650,7 @@
 						"components": [
 							{
 								"internalType": "string",
-								"name": "userEmail",
+								"name": "email",
 								"type": "string"
 							},
 							{
@@ -650,7 +670,17 @@
 							},
 							{
 								"internalType": "string",
-								"name": "biografy",
+								"name": "biography",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "degree",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "profession",
 								"type": "string"
 							},
 							{
@@ -714,7 +744,7 @@
 											},
 											{
 												"internalType": "string",
-												"name": "reviewContent",
+												"name": "content",
 												"type": "string"
 											},
 											{
@@ -746,7 +776,7 @@
 									},
 									{
 										"internalType": "string",
-										"name": "reviewContent",
+										"name": "content",
 										"type": "string"
 									},
 									{
@@ -780,7 +810,7 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "userEmail",
+						"name": "email",
 						"type": "string"
 					},
 					{
@@ -800,7 +830,17 @@
 					},
 					{
 						"internalType": "string",
-						"name": "biografy",
+						"name": "biography",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "degree",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "profession",
 						"type": "string"
 					},
 					{
@@ -852,10 +892,10 @@
 	},
 	"sources": {
 		"Contract.sol": {
-			"keccak256": "0x0632338c7a0fb75378964adb32c2e2f2d311bb54818b7734621bb16361b744a9",
+			"keccak256": "0x4057c05623dc434f6c685ea1d9c49cdf3b5c1347ddfef3f3b4773805e77a4a50",
 			"urls": [
-				"bzz-raw://2e4bf3f4b4b9aa2ac9214d44cdb737c6674dadbbe6bd18d2e1afed2e79223955",
-				"dweb:/ipfs/QmSPutmNNHtosMsa4gwcGgPxbNW5HnLZYYJah81wHNPoLp"
+				"bzz-raw://9e7007a1be5ce6725652e2398e7971264812e6109856db7c60457bf8d39de1c7",
+				"dweb:/ipfs/QmXfJrkkaJkoCGQQEFVEWvAkQrYTPVdiJbyrJbocVpQvRP"
 			]
 		}
 	},
