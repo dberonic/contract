@@ -877,7 +877,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Contract.sol": "Main"
+			"Contract2.sol": "Main"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -891,11 +891,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"Contract.sol": {
-			"keccak256": "0x4057c05623dc434f6c685ea1d9c49cdf3b5c1347ddfef3f3b4773805e77a4a50",
+		"Contract2.sol": {
+			"keccak256": "0x86bf0da55fdc2a5cbfd4007892b9c95da62f415d080cafba38a88dcd8a658001",
 			"urls": [
-				"bzz-raw://9e7007a1be5ce6725652e2398e7971264812e6109856db7c60457bf8d39de1c7",
-				"dweb:/ipfs/QmXfJrkkaJkoCGQQEFVEWvAkQrYTPVdiJbyrJbocVpQvRP"
+				"bzz-raw://c605f595596f1effed00bb52fb1c1080461c091fd303867462c8ec5bffc32d7d",
+				"dweb:/ipfs/QmUvvQfVoYzKE3c7RYtwiSUMQv1CTqRBr7nEwqqyTJKXai"
 			]
 		}
 	},

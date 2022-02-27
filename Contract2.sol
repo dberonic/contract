@@ -59,22 +59,23 @@ contract Main {
     constructor () public {
         // the suthors address will be hinden and you will only be able to see the hash
         // this is the 
-        addUser("admin@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida neque arcu, non aliquam lectus aliquet a. Suspendisse placerat mi at erat pellentesque venenatis. Mauris eget congue libero. Aenean viverra tincidunt massa a ultrices.", "admin", 0xE0B6e5538CE13841B19A022cA671a1177a3B7d83); // Dora admin
-        addPaper(0, "#000", "Test title for Computer Science", "Computer Science", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 10,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
+        addUser("admin@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet.", "admin", 0xE0B6e5538CE13841B19A022cA671a1177a3B7d83); // Dora admin
+        addPaper(0, "#000", "Test title for Computer Science", "Computer Science", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 10,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
         addPaper(1, "#000", "Test title for Psyhologie", "Psyhologie", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
 
-        addUser("admin2@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida neque arcu, non aliquam lectus aliquet a. Suspendisse placerat mi at erat pellentesque venenatis. Mauris eget congue libero. Aenean viverra tincidunt massa a ultrices.", "admin", 0x2DD47f044d60B4c2BCA9790635329dfb4C397A44); // Zoka admin
+        // addUser("admin2@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit ametes.", "admin", 0x2DD47f044d60B4c2BCA9790635329dfb4C397A44); // Zoka admin
 
-        addPaper(2, "#000", "Test title for Ecology", "Ecology", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0x2DD47f044d60B4c2BCA9790635329dfb4C397A44);
-        addPaper(3, "#000", "Test title for Biology", "Biology", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0x2DD47f044d60B4c2BCA9790635329dfb4C397A44);
+        // addPaper(2, "#000", "Test title for Ecology", "Ecology", "Lorem ipsum dolor sit amet, ", 8,0x2DD47f044d60B4c2BCA9790635329dfb4C397A44);
+        // addPaper(3, "#000", "Test title for Biology", "Biology", "Lorem ipsum dolor sit amet, ", 8,0x2DD47f044d60B4c2BCA9790635329dfb4C397A44);
 
-        addUser("admin3@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida neque arcu, non aliquam lectus aliquet a. Suspendisse placerat mi at erat pellentesque venenatis. Mauris eget congue libero. Aenean viverra tincidunt massa a ultrices.", "admin", 0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451); // Saelda admin
+        // addUser("admin3@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet, .", "admin", 0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451); // Saelda admin
 
-        addPaper(4, "#000", "Test title for Chemistry", "Chemistry", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451);
-        addPaper(5, "#000", "Test title for Philosphi", "Philosophy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451);
+        // addPaper(4, "#000", "Test title for Chemistry", "Chemistry", "Lorem ipsum dolor sit amet,.", 8,0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451);
+        // addPaper(5, "#000", "Test title for Philosphi", "Philosophy", "Lorem ipsum dolor sit amet,", 8,0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451);
 
-        addReview("0xE0B6e5538CE13841B19A022cA671a1177a3B7d83", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
-    }
+        // addReview("0xE0B6e5538CE13841B19A022cA671a1177a3B7d83", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
+  
+ }
 
     // returning all papers
     function getUsers()  public view returns(User[] memory){
