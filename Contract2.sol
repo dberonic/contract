@@ -17,7 +17,9 @@ contract Main {
         // passwords will be hashed appon entry and compared to stored hashes
 
         string biography;
-        string degree;
+        string degree; 
+        // to add reviews and get air drop the user needs to be confirmed
+        // if they have a degree they get more tokens
         string profession; 
 
         uint balance;
@@ -56,6 +58,8 @@ contract Main {
     User[] usersArray;
     Paper[] papersArray;
 
+    User[] unApprovedUsers;
+
     constructor () public {
         // the suthors address will be hinden and you will only be able to see the hash
         // this is the 
@@ -63,6 +67,7 @@ contract Main {
         addPaper(0, "#000", "Test title for Computer Science", "Computer Science", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 10,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
         addPaper(1, "#000", "Test title for Psyhologie", "Psyhologie", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
 
+        addReview("0xE0B6e5538CE13841B19A022cA671a1177a3B7d83", 0, "Test Text");
         // addUser("admin2@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit ametes.", "admin", 0x2DD47f044d60B4c2BCA9790635329dfb4C397A44); // Zoka admin
 
         // addPaper(2, "#000", "Test title for Ecology", "Ecology", "Lorem ipsum dolor sit amet, ", 8,0x2DD47f044d60B4c2BCA9790635329dfb4C397A44);
@@ -169,6 +174,19 @@ contract Main {
         return users[_authorAddress].postedPapers;
     }
 
+    function getPaperReviews(uint _paperID)  public view returns(Review [] memory) {
+        return papers[_paperID].paperReviews;
+    }
+
+    function approveUser(address _userAdress) public returns(bool) {
+        users[_userAdress].confirmed = true;
+        return users[_userAdress].confirmed;
+    }   
+
+    function addDegree(address _userAdress, string memory _degreeCatrgory ) public returns(string memory) {
+        users[_userAdress].degree = _degreeCatrgory;
+        return users[_userAdress].degree;
+    } 
 
 
 }

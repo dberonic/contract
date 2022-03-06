@@ -13,6 +13,30 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_userAdress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_degreeCatrgory",
+						"type": "string"
+					}
+				],
+				"name": "addDegree",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_paperID",
 						"type": "uint256"
@@ -73,6 +97,25 @@
 				],
 				"name": "addReview",
 				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdress",
+						"type": "address"
+					}
+				],
+				"name": "approveUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -162,6 +205,47 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_paperID",
+						"type": "uint256"
+					}
+				],
+				"name": "getPaperReviews",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "authorHash",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "paperReviwed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "content",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "reviewId",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Main.Review[]",
+						"name": "",
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -892,10 +976,10 @@
 	},
 	"sources": {
 		"Contract2.sol": {
-			"keccak256": "0x86bf0da55fdc2a5cbfd4007892b9c95da62f415d080cafba38a88dcd8a658001",
+			"keccak256": "0xf8ae618f436f688f76ad36c3589ba73225960764c4211086fa978fd8f737063a",
 			"urls": [
-				"bzz-raw://c605f595596f1effed00bb52fb1c1080461c091fd303867462c8ec5bffc32d7d",
-				"dweb:/ipfs/QmUvvQfVoYzKE3c7RYtwiSUMQv1CTqRBr7nEwqqyTJKXai"
+				"bzz-raw://bf3906decf9f174c9440048c231749eb9e97a8d95aef8dcddc73023c89c6ad30",
+				"dweb:/ipfs/QmS8JjsDXfXQoTrRmMFZ7Y8ooDuwdn55r5MfycEfP1xgJD"
 			]
 		}
 	},
