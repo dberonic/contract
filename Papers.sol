@@ -29,6 +29,9 @@ contract Papers is Structs{
         //addUser("admin@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet.", "admin", 0xE0B6e5538CE13841B19A022cA671a1177a3B7d83); // Dora admin
         addPaper(0, "#000", "Test title for Computer Science", "Computer Science", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 10,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
         addPaper(1, "#000", "Test title for Psyhologie", "Psyhologie", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
+    
+        addReview("0xE0B6e5538CE13841B19A022cA671a1177a3B7d83", 0, "Test Text");
+        addReview("0xE0B6e5538CE13841B19A022cA671a1177a3B7d83", 1, "Test Text 1");
     }
 
 
@@ -49,6 +52,8 @@ contract Papers is Structs{
       //TODO assign to the user
      //   users[_authorAddress].postedPapers.push(papers[_paperID]);
     }
+
+    
 
     // MOVE
     function addReview(string memory _authorAddress, uint _paperID, string memory _reviewContent) public {

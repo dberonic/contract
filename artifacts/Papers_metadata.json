@@ -360,10 +360,10 @@
 	},
 	"sources": {
 		"Papers.sol": {
-			"keccak256": "0xe39ca85f89afb0aa17b9b67a637f5c8b322b430f1a299b22d068f8207db01045",
+			"keccak256": "0x2c784392719bc0cea3282e37bc2acd7989b7f108a2a719c96f08a651714e7179",
 			"urls": [
-				"bzz-raw://cac0582b7359725ddbe65281473e650c2659aafd16db6fa85a9f8406c376278c",
-				"dweb:/ipfs/QmUjLFFodkRXiY2makwM3y8wpb8LSPnRuf8UyyHtYvWvRj"
+				"bzz-raw://4e5b29662e73696a1b014d5a8e87a7ed72cdd1891ed358247f73df9b7855e0eb",
+				"dweb:/ipfs/QmcMNJxkcurNvuKv1XafywUe2dNHbnQrqEFQPKz1a8VRpa"
 			]
 		},
 		"Structs.sol": {

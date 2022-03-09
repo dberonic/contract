@@ -12,7 +12,7 @@ import "Structs.sol";
 contract Main is Structs{
     
     // conection to paper contract
-    Papers papers = Papers(0xD7ACd2a9FD159E69Bb102A1ca21C9a3e3A5F771B);
+    Papers papers = Papers(0xaCe794EC12070498D537627256944D000F4e6b5E);
 
     // Read/write Users
     mapping(address => User) public users;
@@ -56,6 +56,15 @@ contract Main is Structs{
         return papers.getPapers();
     }
 
+    function getPaper(uint _paperID) public view returns (string memory, string memory, string memory, string memory, uint, address ){
+        return papers.papers(_paperID);
+
+    }
+
+    function getPaperReviews(uint _paperID)  public view returns(Review [] memory) {
+        return papers.getPaperReviews(_paperID);
+    }
+
     function getAuthoredPapers(address _authorAddress) public view returns(Paper [] memory){
         return papers.getAuthoredPapers(_authorAddress);
     }
@@ -75,6 +84,11 @@ contract Main is Structs{
         papers.addPaper(_paperID, _authorHash, _title, _category, _paperAbstract, _minuteRead, _authorAddress);
 
         return false;
+    }
+
+    function addReview(string memory _authorAddress, uint _paperID, string memory _reviewContent) public {
+        papers.addReview(_authorAddress, _paperID, _reviewContent);
+
     }
 
 
