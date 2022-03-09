@@ -58,7 +58,8 @@ contract Main {
     User[] usersArray;
     Paper[] papersArray;
 
-    User[] unApprovedUsers;
+    User[] unapprovedUsers;
+    User[] unapprovedDegree;
 
     constructor () public {
         // the suthors address will be hinden and you will only be able to see the hash
@@ -178,15 +179,46 @@ contract Main {
         return papers[_paperID].paperReviews;
     }
 
+
+
+    // approve user KYC
     function approveUser(address _userAdress) public returns(bool) {
         users[_userAdress].confirmed = true;
+        removeApprovedUser(_userAdress, unapprovedUsers);
         return users[_userAdress].confirmed;
     }   
 
+    // approve user degree
     function addDegree(address _userAdress, string memory _degreeCatrgory ) public returns(string memory) {
         users[_userAdress].degree = _degreeCatrgory;
+        removeApprovedUser(_userAdress, unapprovedDegree);
         return users[_userAdress].degree;
+    }
+
+    function removeApprovedUser(address _userAdress, User[] memory approvalList) private returns(bool){
+        for (uint i = 0; i < approvalList.length - 1; i++) {
+           if(approvalList[i].userAddress == _userAdress){
+               // shift all elements to the left
+
+               // Perserves order
+            for (uint j = i; j < approvalList.length - 1; j++) {
+                approvalList[j] = approvalList[j+1];
+            }
+            return true;
+           }
+        }
+        return false;
+    }
+
+    // add new user to the list of unapproved
+    function requestAuthentication(address _userAdress, string memory _linkToDocument ) public returns(bool) {
+        users[_userAdress].confirmed;
+        if( users[_userAdress].confirmed == true){
+            unapprovedUsers.push(users[_userAdress]);
+        } else {
+            unapprovedDegree.push(users[_userAdress]);
+        }
+        // return true if everything is ok
+        return true;
     } 
-
-
 }

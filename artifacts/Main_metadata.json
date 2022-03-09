@@ -73,30 +73,13 @@
 					}
 				],
 				"name": "addPaper",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
+				"outputs": [
 					{
-						"internalType": "string",
-						"name": "_authorAddress",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_paperID",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_reviewContent",
-						"type": "string"
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
-				"name": "addReview",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -184,12 +167,12 @@
 										"type": "uint256"
 									}
 								],
-								"internalType": "struct Main.Review[]",
+								"internalType": "struct Structs.Review[]",
 								"name": "paperReviews",
 								"type": "tuple[]"
 							}
 						],
-						"internalType": "struct Main.Paper[]",
+						"internalType": "struct Structs.Paper[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -205,47 +188,6 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_paperID",
-						"type": "uint256"
-					}
-				],
-				"name": "getPaperReviews",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "authorHash",
-								"type": "string"
-							},
-							{
-								"internalType": "uint256",
-								"name": "paperReviwed",
-								"type": "uint256"
-							},
-							{
-								"internalType": "string",
-								"name": "content",
-								"type": "string"
-							},
-							{
-								"internalType": "uint256",
-								"name": "reviewId",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct Main.Review[]",
-						"name": "",
-						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -310,12 +252,12 @@
 										"type": "uint256"
 									}
 								],
-								"internalType": "struct Main.Review[]",
+								"internalType": "struct Structs.Review[]",
 								"name": "paperReviews",
 								"type": "tuple[]"
 							}
 						],
-						"internalType": "struct Main.Paper[]",
+						"internalType": "struct Structs.Paper[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -380,98 +322,17 @@
 								"type": "bool"
 							},
 							{
-								"components": [
-									{
-										"internalType": "string",
-										"name": "authorHash",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "title",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "category",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "paperAbstract",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "minuteRead",
-										"type": "uint256"
-									},
-									{
-										"internalType": "address",
-										"name": "authorAddress",
-										"type": "address"
-									},
-									{
-										"components": [
-											{
-												"internalType": "string",
-												"name": "authorHash",
-												"type": "string"
-											},
-											{
-												"internalType": "uint256",
-												"name": "paperReviwed",
-												"type": "uint256"
-											},
-											{
-												"internalType": "string",
-												"name": "content",
-												"type": "string"
-											},
-											{
-												"internalType": "uint256",
-												"name": "reviewId",
-												"type": "uint256"
-											}
-										],
-										"internalType": "struct Main.Review[]",
-										"name": "paperReviews",
-										"type": "tuple[]"
-									}
-								],
-								"internalType": "struct Main.Paper[]",
-								"name": "postedPapers",
-								"type": "tuple[]"
+								"internalType": "string",
+								"name": "postedPapersID",
+								"type": "string"
 							},
 							{
-								"components": [
-									{
-										"internalType": "string",
-										"name": "authorHash",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "paperReviwed",
-										"type": "uint256"
-									},
-									{
-										"internalType": "string",
-										"name": "content",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "reviewId",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct Main.Review[]",
-								"name": "writtenReviews",
-								"type": "tuple[]"
+								"internalType": "string",
+								"name": "writtenReviewsListID",
+								"type": "string"
 							}
 						],
-						"internalType": "struct Main.User[]",
+						"internalType": "struct Structs.User[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -552,144 +413,19 @@
 								"type": "bool"
 							},
 							{
-								"components": [
-									{
-										"internalType": "string",
-										"name": "authorHash",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "title",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "category",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "paperAbstract",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "minuteRead",
-										"type": "uint256"
-									},
-									{
-										"internalType": "address",
-										"name": "authorAddress",
-										"type": "address"
-									},
-									{
-										"components": [
-											{
-												"internalType": "string",
-												"name": "authorHash",
-												"type": "string"
-											},
-											{
-												"internalType": "uint256",
-												"name": "paperReviwed",
-												"type": "uint256"
-											},
-											{
-												"internalType": "string",
-												"name": "content",
-												"type": "string"
-											},
-											{
-												"internalType": "uint256",
-												"name": "reviewId",
-												"type": "uint256"
-											}
-										],
-										"internalType": "struct Main.Review[]",
-										"name": "paperReviews",
-										"type": "tuple[]"
-									}
-								],
-								"internalType": "struct Main.Paper[]",
-								"name": "postedPapers",
-								"type": "tuple[]"
+								"internalType": "string",
+								"name": "postedPapersID",
+								"type": "string"
 							},
 							{
-								"components": [
-									{
-										"internalType": "string",
-										"name": "authorHash",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "paperReviwed",
-										"type": "uint256"
-									},
-									{
-										"internalType": "string",
-										"name": "content",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "reviewId",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct Main.Review[]",
-								"name": "writtenReviews",
-								"type": "tuple[]"
+								"internalType": "string",
+								"name": "writtenReviewsListID",
+								"type": "string"
 							}
 						],
-						"internalType": "struct Main.User",
+						"internalType": "struct Structs.User",
 						"name": "",
 						"type": "tuple"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "papers",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "authorHash",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "title",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "category",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "paperAbstract",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "minuteRead",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "authorAddress",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -783,100 +519,43 @@
 								"type": "bool"
 							},
 							{
-								"components": [
-									{
-										"internalType": "string",
-										"name": "authorHash",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "title",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "category",
-										"type": "string"
-									},
-									{
-										"internalType": "string",
-										"name": "paperAbstract",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "minuteRead",
-										"type": "uint256"
-									},
-									{
-										"internalType": "address",
-										"name": "authorAddress",
-										"type": "address"
-									},
-									{
-										"components": [
-											{
-												"internalType": "string",
-												"name": "authorHash",
-												"type": "string"
-											},
-											{
-												"internalType": "uint256",
-												"name": "paperReviwed",
-												"type": "uint256"
-											},
-											{
-												"internalType": "string",
-												"name": "content",
-												"type": "string"
-											},
-											{
-												"internalType": "uint256",
-												"name": "reviewId",
-												"type": "uint256"
-											}
-										],
-										"internalType": "struct Main.Review[]",
-										"name": "paperReviews",
-										"type": "tuple[]"
-									}
-								],
-								"internalType": "struct Main.Paper[]",
-								"name": "postedPapers",
-								"type": "tuple[]"
+								"internalType": "string",
+								"name": "postedPapersID",
+								"type": "string"
 							},
 							{
-								"components": [
-									{
-										"internalType": "string",
-										"name": "authorHash",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "paperReviwed",
-										"type": "uint256"
-									},
-									{
-										"internalType": "string",
-										"name": "content",
-										"type": "string"
-									},
-									{
-										"internalType": "uint256",
-										"name": "reviewId",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct Main.Review[]",
-								"name": "writtenReviews",
-								"type": "tuple[]"
+								"internalType": "string",
+								"name": "writtenReviewsListID",
+								"type": "string"
 							}
 						],
-						"internalType": "struct Main.User",
+						"internalType": "struct Structs.User",
 						"name": "",
 						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_linkToDocument",
+						"type": "string"
+					}
+				],
+				"name": "requestAuthentication",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -941,6 +620,16 @@
 						"internalType": "bool",
 						"name": "confirmed",
 						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "postedPapersID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "writtenReviewsListID",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -961,7 +650,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Contract2.sol": "Main"
+			"Contract.sol": "Main"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -975,11 +664,25 @@
 		"remappings": []
 	},
 	"sources": {
-		"Contract2.sol": {
-			"keccak256": "0xf8ae618f436f688f76ad36c3589ba73225960764c4211086fa978fd8f737063a",
+		"Contract.sol": {
+			"keccak256": "0x59af312a5fc3e582e540b4df485ea5143efe558f1aa7189ff29a633c14842844",
 			"urls": [
-				"bzz-raw://bf3906decf9f174c9440048c231749eb9e97a8d95aef8dcddc73023c89c6ad30",
-				"dweb:/ipfs/QmS8JjsDXfXQoTrRmMFZ7Y8ooDuwdn55r5MfycEfP1xgJD"
+				"bzz-raw://7e8d6d79ef6c7c29b45378a8c3633af71df62aa4849a450780ba48581132df47",
+				"dweb:/ipfs/QmYhiais4nMspNYNtZGDgGiSSBDW6o1wBF73zvGrE5Atbi"
+			]
+		},
+		"Papers.sol": {
+			"keccak256": "0xe39ca85f89afb0aa17b9b67a637f5c8b322b430f1a299b22d068f8207db01045",
+			"urls": [
+				"bzz-raw://cac0582b7359725ddbe65281473e650c2659aafd16db6fa85a9f8406c376278c",
+				"dweb:/ipfs/QmUjLFFodkRXiY2makwM3y8wpb8LSPnRuf8UyyHtYvWvRj"
+			]
+		},
+		"Structs.sol": {
+			"keccak256": "0x7efb6de6a94b5c2a12105a6afbc266c8f7f94e966da7b662660a9f4ae3e7bb06",
+			"urls": [
+				"bzz-raw://abc4b40b20b0eb86aae18cdce1f77c92a3da823de43377c7d16cc94a479d4a74",
+				"dweb:/ipfs/QmRZnusb5PjFMak1KxPNpRW5fLaYUFYo8k5fPgNuiGvyVF"
 			]
 		}
 	},

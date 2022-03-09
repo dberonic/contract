@@ -1,0 +1,197 @@
+{
+	"compiler": {
+		"version": "0.8.12+commit.f00d7308"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_paperID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_authorHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_category",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_paperAbstract",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minuteRead",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_authorAddress",
+						"type": "address"
+					}
+				],
+				"name": "addPaper",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_authorAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_paperID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_reviewContent",
+						"type": "string"
+					}
+				],
+				"name": "addReview",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_paperID",
+						"type": "uint256"
+					}
+				],
+				"name": "getPaperReviews",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "authorHash",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "paperReviwed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "content",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "reviewId",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct P.Review[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "papers",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "authorHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "paperAbstract",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minuteRead",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "authorAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "The main contract Holds the lists of users and papers and conects them*",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Paper.sol": "P"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Paper.sol": {
+			"keccak256": "0xf4faec461386cbc6012faec9f227ccf97aaad41b865a81897ea1c6581c235618",
+			"urls": [
+				"bzz-raw://34c14dc0214623a7bcd89c3fbd46d0bc39f2a30b7947025a27f47af9bfb10463",
+				"dweb:/ipfs/QmVREtYmbjuvX9MFZaLrnaY9x3F68nc7G8cYG5L3hw1S1w"
+			]
+		}
+	},
+	"version": 1
+}

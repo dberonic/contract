@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.12+commit.f00d7308"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "The main contract Holds the lists of users and papers and conects them*",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Structs.sol": "Structs"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Structs.sol": {
+			"keccak256": "0x7efb6de6a94b5c2a12105a6afbc266c8f7f94e966da7b662660a9f4ae3e7bb06",
+			"urls": [
+				"bzz-raw://abc4b40b20b0eb86aae18cdce1f77c92a3da823de43377c7d16cc94a479d4a74",
+				"dweb:/ipfs/QmRZnusb5PjFMak1KxPNpRW5fLaYUFYo8k5fPgNuiGvyVF"
+			]
+		}
+	},
+	"version": 1
+}
