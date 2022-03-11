@@ -375,6 +375,71 @@
 			},
 			{
 				"inputs": [],
+				"name": "getUnaprovedUsers",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "email",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "firstName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lastName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "passwordHash",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "biography",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "degree",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "profession",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "balance",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "userAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "confirmed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Structs.User[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getUsers",
 				"outputs": [
 					{
@@ -428,16 +493,6 @@
 								"internalType": "bool",
 								"name": "confirmed",
 								"type": "bool"
-							},
-							{
-								"internalType": "string",
-								"name": "postedPapersID",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "writtenReviewsListID",
-								"type": "string"
 							}
 						],
 						"internalType": "struct Structs.User[]",
@@ -519,16 +574,6 @@
 								"internalType": "bool",
 								"name": "confirmed",
 								"type": "bool"
-							},
-							{
-								"internalType": "string",
-								"name": "postedPapersID",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "writtenReviewsListID",
-								"type": "string"
 							}
 						],
 						"internalType": "struct Structs.User",
@@ -625,16 +670,6 @@
 								"internalType": "bool",
 								"name": "confirmed",
 								"type": "bool"
-							},
-							{
-								"internalType": "string",
-								"name": "postedPapersID",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "writtenReviewsListID",
-								"type": "string"
 							}
 						],
 						"internalType": "struct Structs.User",
@@ -728,16 +763,6 @@
 						"internalType": "bool",
 						"name": "confirmed",
 						"type": "bool"
-					},
-					{
-						"internalType": "string",
-						"name": "postedPapersID",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "writtenReviewsListID",
-						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -773,24 +798,24 @@
 	},
 	"sources": {
 		"Contract.sol": {
-			"keccak256": "0x753cd5ec5d7005721bfca4075a9cbeeb9cd620a64d0e44c23f884fbc7bbbe0a6",
+			"keccak256": "0xfb8154082f2b092359da1fc0c3320bb19cc49da2fd5a82ca8b3b132b975bdf12",
 			"urls": [
-				"bzz-raw://d52c99ead9066ab8d28867651c7631e7c6dc39fa4520fd014c18aca03d9f4413",
-				"dweb:/ipfs/QmP1KgeExaW8xwYLE7AsxPGCcZU871CdsZYgsJTq7965mT"
+				"bzz-raw://f08ce16286e9ebc17605f055f7db7bd849711abfa5ff471410d845ce2d5c7f36",
+				"dweb:/ipfs/QmPL7wPg79rLg5tkr7eYqLsymjqP8qYwaREfeYqChhuNWA"
 			]
 		},
 		"Papers.sol": {
-			"keccak256": "0x2c784392719bc0cea3282e37bc2acd7989b7f108a2a719c96f08a651714e7179",
+			"keccak256": "0xea0aead816f85d5398bce22e0e26c212b50de6a0238096c9b360f98224602a0d",
 			"urls": [
-				"bzz-raw://4e5b29662e73696a1b014d5a8e87a7ed72cdd1891ed358247f73df9b7855e0eb",
-				"dweb:/ipfs/QmcMNJxkcurNvuKv1XafywUe2dNHbnQrqEFQPKz1a8VRpa"
+				"bzz-raw://6e85926763d43a6be412aae70471e6317c1b0e0a73961d9b986c96f6ede68560",
+				"dweb:/ipfs/QmdxJ7Tzrs1vVv3BXxzmKP2UXvrzFG3K6P1PrHbCW2QE4z"
 			]
 		},
 		"Structs.sol": {
-			"keccak256": "0x7efb6de6a94b5c2a12105a6afbc266c8f7f94e966da7b662660a9f4ae3e7bb06",
+			"keccak256": "0x5c4bf524cd08e9367bb65a6ad4aae45ff450643736557e4e223c3198626db99f",
 			"urls": [
-				"bzz-raw://abc4b40b20b0eb86aae18cdce1f77c92a3da823de43377c7d16cc94a479d4a74",
-				"dweb:/ipfs/QmRZnusb5PjFMak1KxPNpRW5fLaYUFYo8k5fPgNuiGvyVF"
+				"bzz-raw://bcf76f6a767f12b4f0e7261009b569627186302bc4d639eb38f761099ff94790",
+				"dweb:/ipfs/QmXGyKTxSSSJDa2gGUtWtsouwuTZbYz96UKmoA3mURf6dt"
 			]
 		}
 	},

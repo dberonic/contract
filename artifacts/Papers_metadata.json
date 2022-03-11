@@ -360,10 +360,10 @@
 	},
 	"sources": {
 		"Papers.sol": {
-			"keccak256": "0x2c784392719bc0cea3282e37bc2acd7989b7f108a2a719c96f08a651714e7179",
+			"keccak256": "0xea0aead816f85d5398bce22e0e26c212b50de6a0238096c9b360f98224602a0d",
 			"urls": [
-				"bzz-raw://4e5b29662e73696a1b014d5a8e87a7ed72cdd1891ed358247f73df9b7855e0eb",
-				"dweb:/ipfs/QmcMNJxkcurNvuKv1XafywUe2dNHbnQrqEFQPKz1a8VRpa"
+				"bzz-raw://6e85926763d43a6be412aae70471e6317c1b0e0a73961d9b986c96f6ede68560",
+				"dweb:/ipfs/QmdxJ7Tzrs1vVv3BXxzmKP2UXvrzFG3K6P1PrHbCW2QE4z"
 			]
 		},
 		"Structs.sol": {

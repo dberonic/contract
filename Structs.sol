@@ -27,8 +27,8 @@ contract Structs{
         bool confirmed;
 
         // store ids from other
-        string postedPapersID; // holds a reference to the array in the paper contract
-        string writtenReviewsListID;
+        // string postedPapersID; // holds a reference to the array in the paper contract
+        // string writtenReviewsListID;
     }
 
      struct Paper {

@@ -53,8 +53,6 @@ contract Papers is Structs{
      //   users[_authorAddress].postedPapers.push(papers[_paperID]);
     }
 
-    
-
     // MOVE
     function addReview(string memory _authorAddress, uint _paperID, string memory _reviewContent) public {
      

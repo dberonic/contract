@@ -12,7 +12,7 @@ import "Structs.sol";
 contract Main is Structs{
     
     // conection to paper contract
-    Papers papers = Papers(0xaCe794EC12070498D537627256944D000F4e6b5E);
+   Papers papers = Papers(0xaCe794EC12070498D537627256944D000F4e6b5E);
 
     // Read/write Users
     mapping(address => User) public users;
@@ -21,7 +21,6 @@ contract Main is Structs{
     User[] usersArray;
 
     User[] unapprovedUsers;
-    User[] unapprovedDegree;
 
     constructor () public {
         // the suthors address will be hinden and you will only be able to see the hash
@@ -141,45 +140,51 @@ contract Main is Structs{
         return user;
     }
 
+  // approve user degree
+    function addDegree(address _userAdress, string memory _degreeCatrgory ) public returns(string memory) {
+        users[_userAdress].degree = _degreeCatrgory;
+        removeApprovedUser(_userAdress);
+        return users[_userAdress].degree;
+    }
+
 
     // approve user KYC
     function approveUser(address _userAdress) public returns(bool) {
         users[_userAdress].confirmed = true;
-        removeApprovedUser(_userAdress, unapprovedUsers);
-        return users[_userAdress].confirmed;
+        
+        return removeApprovedUser(_userAdress);
     }   
 
-    // approve user degree
-    function addDegree(address _userAdress, string memory _degreeCatrgory ) public returns(string memory) {
-        users[_userAdress].degree = _degreeCatrgory;
-        removeApprovedUser(_userAdress, unapprovedDegree);
-        return users[_userAdress].degree;
-    }
-
-    function removeApprovedUser(address _userAdress, User[] memory approvalList) private returns(bool){
-        for (uint i = 0; i < approvalList.length - 1; i++) {
-           if(approvalList[i].userAddress == _userAdress){
-               // shift all elements to the left
-
-               // Perserves order
-            for (uint j = i; j < approvalList.length - 1; j++) {
-                approvalList[j] = approvalList[j+1];
+  
+    function removeApprovedUser(address _userAdress) private returns(bool){
+        for (uint i = 0; i < unapprovedUsers.length; i++) {
+          if(unapprovedUsers[i].userAddress == _userAdress){
+            
+            
+            for (uint j = i; j < unapprovedUsers.length - 1; j++) {
+                unapprovedUsers[j] = unapprovedUsers[j+1];
             }
+            
+            unapprovedUsers.pop();
             return true;
-           }
+          }
         }
+        
         return false;
     }
 
     // add new user to the list of unapproved
     function requestAuthentication(address _userAdress, string memory _linkToDocument ) public returns(bool) {
-        users[_userAdress].confirmed;
-        if( users[_userAdress].confirmed == true){
-            unapprovedUsers.push(users[_userAdress]);
-        } else {
-            unapprovedDegree.push(users[_userAdress]);
-        }
+       
+        unapprovedUsers.push(users[_userAdress]);
+        
         // return true if everything is ok
         return true;
     } 
+
+    function getUnaprovedUsers() public view returns(User[] memory) {
+        return unapprovedUsers;
+    }
+
+
 }
