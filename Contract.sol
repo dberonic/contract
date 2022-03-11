@@ -147,7 +147,6 @@ contract Main is Structs{
         return users[_userAdress].degree;
     }
 
-
     // approve user KYC
     function approveUser(address _userAdress) public returns(bool) {
         users[_userAdress].confirmed = true;
@@ -155,16 +154,17 @@ contract Main is Structs{
         return removeApprovedUser(_userAdress);
     }   
 
+    function rejectUser(address _userAdress) public returns(bool) {        
+        return removeApprovedUser(_userAdress);
+    }  
+
   
     function removeApprovedUser(address _userAdress) private returns(bool){
         for (uint i = 0; i < unapprovedUsers.length; i++) {
           if(unapprovedUsers[i].userAddress == _userAdress){
-            
-            
-            for (uint j = i; j < unapprovedUsers.length - 1; j++) {
+             for (uint j = i; j < unapprovedUsers.length - 1; j++) {
                 unapprovedUsers[j] = unapprovedUsers[j+1];
             }
-            
             unapprovedUsers.pop();
             return true;
           }

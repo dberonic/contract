@@ -686,6 +686,25 @@
 						"internalType": "address",
 						"name": "_userAdress",
 						"type": "address"
+					}
+				],
+				"name": "rejectUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdress",
+						"type": "address"
 					},
 					{
 						"internalType": "string",
@@ -798,10 +817,10 @@
 	},
 	"sources": {
 		"Contract.sol": {
-			"keccak256": "0xfb8154082f2b092359da1fc0c3320bb19cc49da2fd5a82ca8b3b132b975bdf12",
+			"keccak256": "0x0da01b79c081e4c5401015c4434b9ee8a1b52809d16d23b509ecaf6d12da3f4e",
 			"urls": [
-				"bzz-raw://f08ce16286e9ebc17605f055f7db7bd849711abfa5ff471410d845ce2d5c7f36",
-				"dweb:/ipfs/QmPL7wPg79rLg5tkr7eYqLsymjqP8qYwaREfeYqChhuNWA"
+				"bzz-raw://d6ceddb4d9204d06aba15d625b12a568a1bca7f85b7d2a408385ca6ec51b81de",
+				"dweb:/ipfs/QmdVrDRkYgQwvHrZynXHR7yomXT1UuWe8Uyy3nYrDT7tpb"
 			]
 		},
 		"Papers.sol": {
