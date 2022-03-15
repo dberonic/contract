@@ -615,6 +615,11 @@
 						"internalType": "address",
 						"name": "_address",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_documnetLink",
+						"type": "string"
 					}
 				],
 				"name": "register",
@@ -817,10 +822,10 @@
 	},
 	"sources": {
 		"Contract.sol": {
-			"keccak256": "0x0da01b79c081e4c5401015c4434b9ee8a1b52809d16d23b509ecaf6d12da3f4e",
+			"keccak256": "0xb93277b09bbc9be13a834f3e03c3900d2f23d84ffe5b5e1144142146ffed3919",
 			"urls": [
-				"bzz-raw://d6ceddb4d9204d06aba15d625b12a568a1bca7f85b7d2a408385ca6ec51b81de",
-				"dweb:/ipfs/QmdVrDRkYgQwvHrZynXHR7yomXT1UuWe8Uyy3nYrDT7tpb"
+				"bzz-raw://658f4261da02bfebf566c9587ee32bc373366dca4d443934bd64a64b70561dac",
+				"dweb:/ipfs/QmVKKLosxMDDJ1n6RLRbw96A2gCShHJ6BSqkwhsQxvgum2"
 			]
 		},
 		"Papers.sol": {

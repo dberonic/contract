@@ -94,7 +94,7 @@ contract Main is Structs{
     // TODO: add new review
 
 
-    function register (string memory _userEmial, string memory _fname, string memory _lname, string memory _biografy, string memory _passwordHash, address _address) public returns(User memory) {
+    function register (string memory _userEmial, string memory _fname, string memory _lname, string memory _biografy, string memory _passwordHash, address _address, string memory _documnetLink) public returns(User memory) {
          // check if the user exists 
          bytes memory tempEmptyStringTest = bytes(users[_address].email); 
         if(tempEmptyStringTest.length != 0){ // checks if the user with this adress exists
@@ -103,6 +103,7 @@ contract Main is Structs{
 
         //TODO check if the data is in the valid format
         addUser(_userEmial, _fname, _lname, _biografy, _passwordHash, _address);
+        unapprovedUsers.push(users[_address]);
         return users[_address];
     }
 
