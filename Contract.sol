@@ -28,25 +28,9 @@ contract Main is Structs{
     User[] unapprovedUsers;
 
     constructor () public {
-        // the suthors address will be hinden and you will only be able to see the hash
         // this is the 
-        register("admin@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet.", "admin", 0xE0B6e5538CE13841B19A022cA671a1177a3B7d83, "link"); // Dora admin
-        // addPaper(0, "#000", "Test title for Computer Science", "Computer Science", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 10,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
-        // addPaper(1, "#000", "Test title for Psyhologie", "Psyhologie", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
+        register("admin@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet.", "admin", 0xE0B6e5538CE13841B19A022cA671a1177a3B7d83, "link"); // admin
 
-        // addReview("0xE0B6e5538CE13841B19A022cA671a1177a3B7d83", 0, "Test Text");
-        // addUser("admin2@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit ametes.", "admin", 0x2DD47f044d60B4c2BCA9790635329dfb4C397A44); // Zoka admin
-
-        // addPaper(2, "#000", "Test title for Ecology", "Ecology", "Lorem ipsum dolor sit amet, ", 8,0x2DD47f044d60B4c2BCA9790635329dfb4C397A44);
-        // addPaper(3, "#000", "Test title for Biology", "Biology", "Lorem ipsum dolor sit amet, ", 8,0x2DD47f044d60B4c2BCA9790635329dfb4C397A44);
-
-        // addUser("admin3@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet, .", "admin", 0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451); // Saelda admin
-
-        // addPaper(4, "#000", "Test title for Chemistry", "Chemistry", "Lorem ipsum dolor sit amet,.", 8,0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451);
-        // addPaper(5, "#000", "Test title for Philosphi", "Philosophy", "Lorem ipsum dolor sit amet,", 8,0x7b61FC9AbeB0ac95a66E04F8AE69f1DAA842A451);
-
-        // addReview("0xE0B6e5538CE13841B19A022cA671a1177a3B7d83", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
-  
  }
 
     // returning all papers
@@ -101,10 +85,6 @@ contract Main is Structs{
     function sendReaction(uint paperId, uint reviewId, uint value, address userAddress) public{
         papers.sendReaction(paperId, reviewId, value, userAddress);
     }
-
-
-    // TODO: add new review
-
 
     function register (string memory _userEmial, string memory _fname, string memory _lname, string memory _biografy, string memory _passwordHash, address _address, string memory _documnetLink) public returns(User memory) {
          // check if the user exists 
