@@ -21,10 +21,12 @@ contract Structs{
         // to add reviews and get air drop the user needs to be confirmed
         // if they have a degree they get more tokens
         string profession; 
+        string fileUrl;
 
         uint balance;
         address userAddress;
         bool confirmed;
+
 
         // store ids from other
         // string postedPapersID; // holds a reference to the array in the paper contract
@@ -32,6 +34,7 @@ contract Structs{
     }
 
      struct Paper {
+        uint id;
         string authorHash;
         string title;
         string category;
@@ -44,10 +47,20 @@ contract Structs{
     }   
 
     struct Review{
+        uint id;
         string authorHash;
         uint paperReviwed;
+        uint likes;
+        uint dislikes;
 
         string content;
         uint reviewId;
+    }
+
+    struct Like {
+        address userAdress;
+        uint value;
+        // 1 for like
+        // 2 for dislike 
     }
 }
