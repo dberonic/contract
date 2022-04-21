@@ -2,6 +2,7 @@ pragma solidity ^0.8.11;
 pragma abicoder v2;
 
 import "Papers.sol";
+// import "Papers.sol";
 import "Structs.sol";
  
 /**
@@ -12,7 +13,11 @@ import "Structs.sol";
 contract Main is Structs{
     
     // conection to paper contract
-   Papers papers = Papers(0xaCe794EC12070498D537627256944D000F4e6b5E);
+    Papers papers = Papers(0x0Fc069cB9FE2E15D1DdeeFd926fe76f75f69bf02);
+    // Users users = Users(0x040065A75D084d324DE1BdAd3dCf115AbFc12cEb);
+
+
+    //Papers papers = Papers(0xd9145CCE52D386f254917e481eB44e9943F39138);
 
     // Read/write Users
     mapping(address => User) public users;
@@ -25,7 +30,7 @@ contract Main is Structs{
     constructor () public {
         // the suthors address will be hinden and you will only be able to see the hash
         // this is the 
-        addUser("admin@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet.", "admin", 0xE0B6e5538CE13841B19A022cA671a1177a3B7d83); // Dora admin
+        register("admin@gmail.com", "Mr", "Dog", "Lorem ipsum dolor sit amet.", "admin", 0xE0B6e5538CE13841B19A022cA671a1177a3B7d83, "link"); // Dora admin
         // addPaper(0, "#000", "Test title for Computer Science", "Computer Science", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 10,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
         // addPaper(1, "#000", "Test title for Psyhologie", "Psyhologie", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed erat ligula. Maecenas ut gravida lacus. Suspendisse mollis magna at dui tempus euismod. Phasellus luctus condimentum turpis, blandit viverra ligula condimentum vel. Sed cursus sagittis sem nec condimentum. Aliquam erat volutpat. Aenean ac egestas nibh. Aenean vitae feugiat tellus, et congue urna.", 8,0xE0B6e5538CE13841B19A022cA671a1177a3B7d83);
 
@@ -55,7 +60,7 @@ contract Main is Structs{
         return papers.getPapers();
     }
 
-    function getPaper(uint _paperID) public view returns (string memory, string memory, string memory, string memory, uint, address ){
+    function getPaper(uint _paperID) public view returns (uint, string memory, string memory, string memory, string memory, uint, address ){
         return papers.papers(_paperID);
 
     }
@@ -80,7 +85,10 @@ contract Main is Structs{
         if(tempEmptyStringTest.length == 0){ // checks if the user with this adress exists
            revert('The user with this address does not exist');
         }
-        papers.addPaper(_paperID, _authorHash, _title, _category, _paperAbstract, _minuteRead, _authorAddress);
+
+        uint paperId = getPapers().length;
+
+        papers.addPaper(paperId, _authorHash, _title, _category, _paperAbstract, _minuteRead, _authorAddress);
 
         return false;
     }
@@ -88,6 +96,10 @@ contract Main is Structs{
     function addReview(string memory _authorAddress, uint _paperID, string memory _reviewContent) public {
         papers.addReview(_authorAddress, _paperID, _reviewContent);
 
+    }
+
+    function sendReaction(uint paperId, uint reviewId, uint value, address userAddress) public{
+        papers.sendReaction(paperId, reviewId, value, userAddress);
     }
 
 
@@ -103,6 +115,7 @@ contract Main is Structs{
 
         //TODO check if the data is in the valid format
         addUser(_userEmial, _fname, _lname, _biografy, _passwordHash, _address);
+        users[_address].fileUrl = _documnetLink;        
         unapprovedUsers.push(users[_address]);
         return users[_address];
     }
@@ -120,7 +133,16 @@ contract Main is Structs{
        users[_address].confirmed = false;
 
        usersArray.push(users[_address]);
+    }
 
+    function editUser (string memory _userEmial, string memory _fname, string memory _lname, string memory _biography, string memory _passwordHash, address _address) public {
+       // , new Paper[](0) - this does not work
+         // users[_address] = User( _userEmial, _fname, _lname, _passwordHash,_biografy, 100, _address, false);
+       users[_address].email = _userEmial;
+       users[_address].firstName = _fname;
+       users[_address].lastName = _lname;
+       users[_address].passwordHash = _passwordHash;
+       users[_address].biography = _biography;
     }
 
     function login(string memory _userEmial, string memory _passwordHash,  address _address) public view returns(User memory){
@@ -177,6 +199,9 @@ contract Main is Structs{
     // add new user to the list of unapproved
     function requestAuthentication(address _userAdress, string memory _linkToDocument ) public returns(bool) {
        
+        // Add the document to the user that needs to be confirmed
+        users[_userAdress].fileUrl = _linkToDocument;        
+
         unapprovedUsers.push(users[_userAdress]);
         
         // return true if everything is ok
