@@ -21,7 +21,7 @@ contract SampleToken is IERC20 {
 
     string public constant name = "SampleToken";
     string public constant symbol = "SMT";
-    uint8 public constant decimals = 18;
+    uint8 public constant decimals = 2;
 
     mapping(address => uint256) balances;
     mapping(address => mapping (address => uint256)) allowed;
@@ -46,6 +46,7 @@ contract SampleToken is IERC20 {
         balances[msg.sender] = balances[msg.sender].sub(numTokens);
         balances[receiver] = balances[receiver].add(numTokens);
         emit Transfer(msg.sender, receiver, numTokens);
+        approve(receiver, numTokens);
         return true;
     }
 
@@ -59,6 +60,7 @@ contract SampleToken is IERC20 {
         return allowed[owner][delegate];
     }
 
+    // used for paying for paper and review uploads
     function transferFrom(address owner, address buyer, uint256 numTokens) public override returns (bool) {
         require(numTokens <= balances[owner]);
         require(numTokens <= allowed[owner][msg.sender]);
@@ -66,7 +68,7 @@ contract SampleToken is IERC20 {
         balances[owner] = balances[owner].sub(numTokens);
         allowed[owner][msg.sender] = allowed[owner][msg.sender].sub(numTokens);
         balances[buyer] = balances[buyer].add(numTokens);
-        emit Transfer(owner, buyer, numTokens);
+      //  emit Transfer(owner, buyer, numTokens);
         return true;
     }
 }
